@@ -10,6 +10,13 @@ class VerifiedVoter
 	{
 		$url = 'https://www.verifiedvoter.com/service/lookup/voterDetail?';
 
+        // fix zip...
+        if (isset($args['zip']))
+        {
+            $parts = explode('-', $args['zip']);
+            $args['zip'] = $parts[0];
+        }
+
         // build query string
 		foreach ($args as $key => $value)
 		{
