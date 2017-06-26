@@ -51,7 +51,7 @@ class VerifiedVoter
         curl_close($ch);
 
         // save
-        $result = XML::from_string($response);
+        $result = XML::fromString($response);
 
         // catch errors...
         $error = ex($result, 'array.Detail.ErrorDescription.value');
